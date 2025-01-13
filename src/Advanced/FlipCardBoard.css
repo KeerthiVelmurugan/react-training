@@ -1,0 +1,7 @@
+ /* src/components/Board.css */
+ .board {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 440px;
+    margin: 0 auto;
+  }

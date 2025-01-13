@@ -1,0 +1,10 @@
+.container{
+    height: 500px;
+    width: 500px;
+    background-color: rgb(37, 112, 132);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    
+
+}

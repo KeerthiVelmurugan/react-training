@@ -1,0 +1,16 @@
+/* src/components/Game.css */
+.game {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .stats {
+    margin: 20px;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+  
