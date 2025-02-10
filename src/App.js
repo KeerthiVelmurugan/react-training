@@ -216,6 +216,7 @@ import LocationHook from './Router/LocationHook.js';
 import StrictModeComp from './Router/StrictModeComp.js';
 import ConfirmPwd from './Advanced/ConfirmPwd.js';
 import PasswordField from './Basics/PasswordVisible.js';
+import StudentAdd from './CRUD/StudentAdd.js';
 
 
 
@@ -460,6 +461,7 @@ function App() {
       <Route path='/strictmode' element = {<StrictModeComp />}></Route>
       <Route path='/ConfirmPwd' element = {<ConfirmPwd />}></Route>
       <Route path='/Passwordvisible' element = {<PasswordField />}></Route>
+      <Route path='/StudentAdd' element = {<StudentAdd />}></Route>
       
 
       </Routes>
