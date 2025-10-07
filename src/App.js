@@ -1,5 +1,5 @@
 import Variable from './Basics/Variable';
-import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import { BrowserRouter, Routes,Route, Link } from 'react-router-dom';
 import Main from './UseReducerwithUseContext/Main';
 import UsecontextHook from './Hooks/USECONTEXT/UseContextHook.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,11 +21,11 @@ import BmiCalculator from './Basics/BmiCalculator';
 import ErrHandling from './Advanced/ErrHandling';
 import TemperatureConverter from './Basics/TemperatureConvertor';
 import SquareUseMemo from './Workouts/SquareUseMemo';
-import UseRefExample from './Hooks/UseRefExample';
+import UseRefExample from './Hooks/UseRef/UseRefExample.js';
 import ShapeDisplay from './Basics/ShapeDisplay';
 import FormforValidation from './Advanced/FormforValidation';
-import UseRefComponent from './Hooks/UseRefComponent';
-import UseCallbackExample from './Hooks/UseCallbackExample';
+import UseRefComponent from './Hooks/UseRef/UseRefComponent.js';
+import UseCallbackExample from './Hooks/UseCallback&Memo/UseCallbackExample';
 import UseEffectBasic from './Hooks/UseEffectHook/UseEffectBasic.js';
 import UseEffectStateChange from './Hooks/UseEffectHook/UseEffectStateChange.js';
 import DummyJson from './Hooks/UseEffectHook/DummyUseEffect.js';
@@ -42,7 +42,7 @@ import MapDirectionPage from './Advanced/MapDirectionPage';
 import WeatherReport from './Advanced/WhetherReport';
 import WeatherApp from './Advanced/WeatherApp';
 import Game from './A React/Video';
-import ImageUpload from './Basics/ImageUpload';
+import ImageUpload from './Images/ImageUpload';
 import NumberObject from './Objects/NumberObject';
 import ResponsiveNavbar from './Advanced/ResponsiveNavbar';
 import PrimeChecker from './Task100/PrimeNo';
@@ -170,7 +170,7 @@ import RemoveDup from './Basics/RemoveDup.js';
 import PaginationComponent from './Hooks/UseReducer Hook/PaginationComp.js';
 import ModalsComponent from './Hooks/UseReducer Hook/ModalComp.js';
 import ImageUploadAPI from './Advanced/ImageUploadtoApi.js';
-import UseCallbackParentComponent from './Hooks/UseCallbackParent.js';
+import UseCallbackParentComponent from './Hooks/UseCallback&Memo/UseCallbackParent.js';
 import TooltipComponent from './Events/TooltipComponent.js';
 import ContextMenuComponent from './Events/RightClick.js';
 import FormEventsExample from './Events/AllinOneStateForm.js';
@@ -188,7 +188,7 @@ import FormForPost from './AA django/FormForPost.js';
 import SpanExample from './Basics/SpanExample.js';
 import ExamTimer from './Hooks/UseEffectHook/ExamTimer.js';
 import Events from './Events/Events.js';
-import UseMemoHook from './Hooks/UseMemoHook.js';
+import UseMemoHook from './Hooks/UseCallback&Memo/UseMemoHook.js';
 import SignIn from './Firbase/SigninWithGoogle.js';
 import LoginFormValidation from './Advanced/LoginFormValidation.js';
 import SignUp from './Firbase/SignUpForOthers.js';
@@ -200,7 +200,7 @@ import VideoConn from './A React/VideoConn.js';
 import Calcpro from './Advanced/Calc.js';
 import Calcapp from './Advanced/Calc_pro.js';
 import DigitalClock from './Hooks/UseEffectHook/DigitalClock.js';
-import UseRef from './Hooks/UseRef.js';
+import UseRef from './Hooks/UseRef/UseRef.js';
 import SignupForm from './Advanced/FormikValidation.js';
 import CountDownTimer from './Hooks/UseEffectHook/CountDownTimer.js';
 import Button from './Basics/Button.js';
@@ -217,6 +217,37 @@ import StrictModeComp from './Router/StrictModeComp.js';
 import ConfirmPwd from './Advanced/ConfirmPwd.js';
 import PasswordField from './Basics/PasswordVisible.js';
 import StudentAdd from './CRUD/StudentAdd.js';
+import Portfolio from './Advanced/Portfolio.js';
+import UnitConverter from './A_NEW_TASKS/UnitConvertor.js';
+import Apps from './Advanced/Props/App.js';
+import TrafficLights from './Hooks/UseState/TrafficLight.js';
+import CRUD from './Firbase/CRUD.js';
+import Invoice from './Invoice_Generator/Invoice.js';
+import NotesApp from './Firbase/NotesApp.js';
+import ImageUploader from './Images/ImageStore.js';
+import DynamicForm from './Hooks/UseReducer Hook/DynamicForm.js';
+import Register from './Pages/Register.js';
+import Login from './Pages/Login.js';
+import Home from './Pages/Home.js';
+import PortfolioBuilder from './Portfolio/PortfolioBuilder.js';
+import HomePage from './Portfolio/Home.js';
+import PortfolioPreview from './Portfolio/PortfolioPreview.js';
+import { useState } from 'react';
+import SkillForm from './Events/SkillForm';
+import ProductForm from './Firbase/E-Commerce/ProductForm.js';
+import UseRefNew from './Hooks/UseRef/UseRefNew.js';
+import ScrollToSection from './Hooks/UseRef/ScrollToSelection.js';
+import UseRefPractice from './Hooks/UseRef/UseRefPractice.js';
+import FibonacciCalculator from './Hooks/FibonacciCalculator.js';
+import ThemeApp from './Redux/ThemeRedux/ThemeApp.js';
+import CounterIndex from './Redux/CounterRedux/CounterIndex.js';
+import CartIndex from './Redux/CartRedux/CartIndex.js';
+import ProductFormFirestore from './Firbase/E-Commerce/productFirestore.js';
+import CheckboxForm from './Forms/CheckboxEx.js';
+import FullForm from './Forms/FullForm.js';
+import SurveyForm from './Forms/SurveyForm.js';
+import JsonFormBuilder from './Forms/JSonFormBuilder.js';
+import CounterApp from './Redux/CounterRedux/CounterApp.js';
 
 
 
@@ -225,10 +256,20 @@ function App() {
   const location = { lat: 11.039365595372454, lng: 76.868278 };
   const latitude = 11.039365595372454;
   const longitude =76.868278
+  const [portfolioData, setPortfolioData] = useState({});
+  let num=10
   return (
     <>
+    
     <BrowserRouter>
+    <nav className="navbar">
+        <Link to="/">Home</Link>
+        <Link to="/builder">Build Portfolio</Link>
+      </nav>
     <Routes>    
+      <Route path="/portfoliohome" element={<HomePage />} />
+        <Route path="/builder" element={<PortfolioBuilder setPortfolioData={setPortfolioData} />} />
+        <Route path="/preview" element={<PortfolioPreview data={portfolioData} />} />
         <Route path='/Variable' element={<Variable />}></Route>
         <Route path='/Main' element={<Main />}></Route>
         <Route path='/UsecontextHook' element={<UsecontextHook />}></Route>
@@ -462,13 +503,39 @@ function App() {
       <Route path='/ConfirmPwd' element = {<ConfirmPwd />}></Route>
       <Route path='/Passwordvisible' element = {<PasswordField />}></Route>
       <Route path='/StudentAdd' element = {<StudentAdd />}></Route>
-      
-
+      <Route path='/Portfolio' element = {<Portfolio />}></Route>
+      <Route path='/UnitConverter' element = {<UnitConverter />}></Route>
+      <Route path='/Apps' element = {<Apps />}></Route>
+      <Route path='/TrafficLights' element = {<TrafficLights />}></Route>
+      <Route path='/CRUD' element = {<CRUD />}></Route>
+      <Route path='/Invoice' element = {<Invoice />}></Route>
+        <Route path='/noteApp' element={<NotesApp />}></Route>
+        <Route path="imagestore" element={<ImageUploader />} />
+        <Route path="/dynamicform" element={<DynamicForm />} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/Loginpage" element={<Login />} />
+        <Route path="/homepag" element={<Home />} />
+        <Route path="/PortfolioBuilder" element={<PortfolioBuilder />} />
+        <Route path="/skillform" element={<SkillForm />}></Route>
+        <Route path="/UseRefNew" element={<UseRefNew />}></Route>
+         <Route path="/ScrollToSection" element={<ScrollToSection />}></Route>
+          <Route path="/UseRefPractice" element={<UseRefPractice />}></Route>
+          <Route path="/FibonacciCalculator" element={<FibonacciCalculator n={num} />}></Route>
+          <Route path="/new_redux" element={<ThemeApp />}></Route>
+          <Route path="/CounterIndex" element={<CounterIndex />}></Route>
+          <Route path ="/cartapp" element={<CartIndex />}></Route>
+          <Route path ="/CheckboxForm" element={<CheckboxForm />}></Route>
+          <Route path ="/FullForm" element={<FullForm />}></Route>
+          <Route path ="/SurveyForm" element={<SurveyForm />}></Route>
+          <Route path ="/JsonFormBuilder" element={<JsonFormBuilder />}></Route>
       </Routes>
+      
 
       </BrowserRouter>
       {/* <FileUploadWithCamera /> */}
-      
+      {/* <ProductForm /> */}
+      {/* <ProductFormFirestore /> */}
+      <CounterIndex />
       </>
 
   );

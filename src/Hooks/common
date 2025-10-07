@@ -1,0 +1,39 @@
+| ✅ Hook        | 📌 “Management role”                                  |
+| ------------- | ----------------------------------------------------- |
+| `useState`    | Stores **component-local state**                      |
+| `useEffect`   | Runs & cleans up **side effects**                     |
+| `useContext`  | Shares **global data**                                |
+| `useRef`      | Manages **DOM refs & persistent non-reactive values** |
+| `useCallback` | Manages **function re-creation** (performance)        |
+| `useMemo`     | Manages **value recalculation** (performance)         |
+
+
+
+🔍 Example: When to use what
+👉 useState: counter, form field
+👉 useEffect: fetch data from API when component mounts
+👉 useContext: user login status for the whole app
+👉 useRef: focus an input, store previous value
+👉 useCallback: pass a stable function to child to prevent re-render
+👉 useMemo: cache a slow calculation result (e.g., large list filter)
+
+✅ One line summary
+useState & useContext → State & data management
+
+useEffect → Side-effect management
+
+useRef → DOM and persistent mutable value
+
+useCallback & useMemo → Performance optimizations
+useReducer = state manager for complex logic, similar to Redux reducer pattern but local to a component.
+
+
+useReducer is an alternative to useState for managing more complex state logic in React.
+
+It’s inspired by Redux-style reducers:
+
+You have a state
+
+You have actions
+
+You have a reducer function that decides how to update the state based on the action.

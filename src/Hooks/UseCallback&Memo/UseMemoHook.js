@@ -16,8 +16,8 @@ function UseMemoHook() {
       
       <input
         type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        value={count}
+        onChange={(e) => setCount(Number(e.target.value))}
         placeholder="Enter your name"
       />
       

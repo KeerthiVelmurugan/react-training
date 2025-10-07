@@ -99,8 +99,10 @@ import React, { useState } from 'react';
 import Cookies from 'js-cookie';
 
 const CookieExample = () => {
+
   const [cookieValue, setCookieValue] = useState(Cookies.get('accepted'));
   const [showConsent, setShowConsent] = useState(false);
+
 
   // Function to accept cookies
   const acceptCookies = () => {
@@ -109,6 +111,8 @@ const CookieExample = () => {
     alert('Cookies accepted!');
     setCookieValue('yes');
     setShowConsent(false);
+    localStorage.setItem('name', 'user 1');
+    sessionStorage.setItem('name', 'user 2');
   };
 
   // Function to check if cookies are accepted
