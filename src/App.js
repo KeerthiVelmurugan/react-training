@@ -248,7 +248,7 @@ import FullForm from './Forms/FullForm.js';
 import SurveyForm from './Forms/SurveyForm.js';
 import JsonFormBuilder from './Forms/JSonFormBuilder.js';
 import CounterApp from './Redux/CounterRedux/CounterApp.js';
-import ChatApp from './AI/ChatApp.js';
+
 import NotFound from './Router/NotFound.js';
 import Dashboard from './Router/Dashboard.js';
 import Users from './Router/Users.js';
@@ -533,7 +533,7 @@ function App() {
           <Route path ="/FullForm" element={<FullForm />}></Route>
           <Route path ="/SurveyForm" element={<SurveyForm />}></Route>
           <Route path ="/JsonFormBuilder" element={<JsonFormBuilder />}></Route>
-          <Route path='chatapp' element={<ChatApp />}></Route>
+         
           <Route path="*" element={<NotFound />} />
           <Route path="/dashboard" element={<Dashboard />}>
     <Route path="users" element={<Users />} />
