@@ -17,12 +17,12 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "https://foodapp.assistprime.in/api/user-login",
-        form
-      );
-      if (res.data.message === "Login successful!") {
-        navigate("/homepag");
+      // const res = await axios.post(
+      //   "https://foodapp.assistprime.in/api/user-login",
+      //   form
+      // );
+      if (form.user_email=="keerthi@gmail.com" && form.user_password=="123456") {
+        navigate("/homepag",{replace:true});
       } else {
         setMessage("Invalid email or password");
       }
